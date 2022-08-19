@@ -14,6 +14,7 @@ import HomeLayout from "../components/layouts/home-layout";
 import InfoSection from "../components/info-section";
 import BioSection from "../components/bio-section";
 import Greeting from "../components/greeting";
+import Site from "../types/site";
 
 export const config: TemplateConfig = {
   name: "home",
@@ -34,45 +35,35 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (
   };
 };
 
-const Home: Template<TemplateRenderProps> = () => {
+const Home: Template<TemplateRenderProps> = ({ document }) => {
+  const { _site } = document;
+  const site: Site = _site;
+
   return (
     <>
       <HomeLayout
         GreetingContent={() => (
           <Greeting
-            name="Aaron"
-            role="Developer Evangelist @ Yext"
-            headshot="src/images/headshot.jpeg"
+            name={site.name}
+            role={site.c_role}
+            headshot={site.c_headshot}
           />
         )}
         InfoContent={() => (
           <div className="centered-container">
             <SocialLinks
-              twitter="https://twitter.com/apav_dev"
-              github="https://github.com/apav-dev"
-              dev_to="https://dev.to/apavlick"
+              twitter={site.c_twitter}
+              github={site.c_github}
+              dev_to={site.c_devTo}
             />
             <InfoSection title="Introduction">
-              <p className="text-lg">
-                My name is Aaron and I&apos;m a developer evangelist at Yext.
-                This is my first Developer Relations role and I&apos;m really
-                enjoying it! We have a lot of cool, new tools for people looking
-                to build websites and I&apos;m excited to demonstrate how to use
-                them. Before I started working at Yext, I worked as a software
-                engineer at a bank and a healthcare company.
-              </p>
+              <p className="text-lg">{site.c_introduction}</p>
             </InfoSection>
             <InfoSection title="Bio">
               <BioSection
-                home="New York, NY"
-                skills={["Yext", "React", "Typescript", "Deno"]}
-                interests={[
-                  "Skiing",
-                  "Podcasts",
-                  "TV",
-                  "Music",
-                  "Hanging out with friends and family",
-                ]}
+                home={site.c_home}
+                skills={site.c_skills}
+                interests={site.c_interests}
               />
             </InfoSection>
           </div>
