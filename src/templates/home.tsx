@@ -13,7 +13,6 @@ import HomeLayout from "../components/layouts/home-layout";
 import InfoSection from "../components/info-section";
 import BioSection from "../components/bio-section";
 import Greeting from "../components/greeting";
-import Site from "../types/site";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `index.html`;
