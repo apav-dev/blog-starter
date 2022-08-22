@@ -18,14 +18,14 @@ const SocialLinks = ({
   <div className="flex gap-4 py-4">
     {twitter && (
       <a href={twitter} target="_blank" rel="noreferrer">
-        <div className="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center shadow-lg">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 shadow-lg">
           <TwitterIcon />
         </div>
       </a>
     )}
     {github && (
       <a href={github} target="_blank" rel="noreferrer">
-        <div className="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center shadow-lg">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 shadow-lg">
           <GithubIcon />
         </div>
       </a>
@@ -33,7 +33,7 @@ const SocialLinks = ({
 
     {dev_to && (
       <a href={dev_to} target="_blank" rel="noreferrer">
-        <div className="rounded-full w-12 h-12 bg-gray-200 flex justify-center items-center shadow-lg">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 shadow-lg">
           <DevToIcon />
         </div>
       </a>

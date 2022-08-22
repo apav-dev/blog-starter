@@ -26,7 +26,6 @@ const Footer = ({ footerContainerStyle }: FooterProps) => {
           <YextIcon />
         </div>
       </div>
-      <p>Last Build: INSERT LAST BUILD TIME</p>
     </footer>
   );
 };

@@ -1,14 +1,27 @@
 import * as React from "react";
+import { twMerge } from "tailwind-merge";
 
 interface InfoSectionProps {
   title: string;
+  titleCssStyles?: string;
   children?: React.ReactNode;
 }
 
-const InfoSection = ({ title, children }: InfoSectionProps): JSX.Element => {
+const InfoSection = ({
+  title,
+  titleCssStyles,
+  children,
+}: InfoSectionProps): JSX.Element => {
   return (
-    <div className="px-8 py-8  bg-gray-200 rounded-2xl shadow-lg my-4">
-      <h2 className="font-bold text-2xl pb-2">{title}</h2>
+    <div className="my-4 rounded-2xl bg-gray-200 px-8 py-8 shadow-lg">
+      <h2
+        className={twMerge(
+          "pb-2 font-display text-2xl font-bold",
+          titleCssStyles
+        )}
+      >
+        {title}
+      </h2>
       {children}
     </div>
   );

@@ -7,7 +7,7 @@ type Props = {
 
 const PageLayout = ({ children }: Props) => {
   return (
-    <div className="min-h-screen relative font-display ">
+    <div className="relative min-h-screen font-display ">
       <Header />
       {children}
     </div>

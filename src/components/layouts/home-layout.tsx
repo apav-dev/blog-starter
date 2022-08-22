@@ -10,11 +10,11 @@ interface HomeLayoutProps {
 const HomeLayout = ({ GreetingContent, InfoContent }: HomeLayoutProps) => {
   return (
     <PageLayout>
-      <div className="flex md:fixed min-h-[30vh] md:h-full top-0 w-full md:w-1/2 bg-gray-600 text-gray-50 pt-[120px] pb-6 md:items-center">
+      <div className="top-0 flex min-h-[30vh] w-full animate-gradient bg-gradient-to-br from-gray-400 via-gray-600 to-blue-800 bg-overflow pt-[120px] pb-6 text-gray-50 md:fixed md:h-full md:w-1/2 md:items-center">
         {GreetingContent && <GreetingContent />}
       </div>
       <div className="md:absolute md:right-0 md:w-1/2 md:pt-[120px]">
-        <div className="w-full pb-[145px] md:min-h-[calc(100vh-152px)] text-gray-800">
+        <div className="w-full pb-[145px] text-gray-800 md:min-h-[calc(100vh-152px)]">
           {InfoContent && <InfoContent />}
           <Footer footerContainerStyle="absolute bottom-0" />
         </div>
