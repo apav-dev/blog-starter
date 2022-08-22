@@ -87,10 +87,6 @@ const BlogPost: Template<TemplateRenderProps> = () => {
           titleCssStyles="text-5xl pb-4"
           title="A Creative Blog Post"
         >
-          <img
-            className="my-4 rounded-2xl shadow-lg"
-            src="/src/images/creativity.jpeg"
-          />
           <div className="flex items-center font-display">
             <p className="py-2 font-display">Aaron Pavlick / August 1, 2022</p>
           </div>
