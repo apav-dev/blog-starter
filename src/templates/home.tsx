@@ -38,9 +38,9 @@ const Home: Template<TemplateRenderProps> = ({ document }) => {
       <HomeLayout
         GreetingContent={() => (
           <Greeting
-            name={site.name}
-            role={site.c_role}
-            headshot={site.c_headshot}
+            name="Aaron"
+            role="Developer Evangelist @ Yext"
+            headshot="src/assets/images/headshot.jpeg"
           />
         )}
         InfoContent={() => (
