@@ -40,6 +40,7 @@ const Home: Template<TemplateRenderProps> = ({ document }) => {
           <Greeting
             name="Aaron"
             role="Developer Evangelist @ Yext"
+            // TODO: local url doesn't show up in deploy
             headshot="src/assets/images/headshot.jpeg"
           />
         )}

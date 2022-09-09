@@ -5,24 +5,12 @@ import {
   GetPath,
   TemplateProps,
   TemplateRenderProps,
-  GetHeadConfig,
-  HeadConfig,
 } from "@yext/pages";
 import InfoSection from "../components/info-section";
+import { Image } from "@yext/pages/components";
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return "blog";
-};
-
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  document,
-}): HeadConfig => {
-  const { name } = document;
-  return {
-    title: name,
-    charset: "UTF-8",
-    viewport: "width=device-width, initial-scale=1",
-  };
 };
 
 const BlogPost: Template<TemplateRenderProps> = ({
@@ -54,9 +42,11 @@ const BlogPost: Template<TemplateRenderProps> = ({
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
         <InfoSection titleCssStyles="text-5xl pb-4" title={"insert name"}>
+          {/* TODO: move this along with cover photo to InfoSection...pass info as props */}
           <div className="flex items-center font-display">
             <p className="py-2 font-display">Aaron Pavlick / INSERT DATE</p>
           </div>
+          {/* TODO: Replace with better body font */}
           <div className="font-display">{"INSERT BLOG CONTENT"}</div>
         </InfoSection>
       </div>
