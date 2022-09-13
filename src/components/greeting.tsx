@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image } from "@yext/pages/components";
+import { Image, ImageType } from "@yext/pages/components";
 
 interface GreetingProps {
   name: string;
@@ -16,13 +16,18 @@ const Greeting = ({ name, role, headshot }: GreetingProps): JSX.Element => {
           <h2 className="mt-8 text-4xl font-semibold">I&apos;m {name}</h2>
           {role && <p className="mt-2 text-xl font-normal">{role}</p>}
         </div>
-        {headshot && (
+        {headshot ? (
           <Image
             className="rounded-full"
             image={headshot}
             layout={"aspect"}
             aspectRatio={1}
             width={80}
+          />
+        ) : (
+          <img
+            className="w-20 rounded-full"
+            src={"src/assets/images/headshot.jpeg"}
           />
         )}
       </div>

@@ -21,7 +21,7 @@ const BioSection = ({ home, skills, interests }: BioSection) => {
   };
 
   return (
-    <div className="text-lg">
+    <div className="font-display text-lg">
       {interests && (
         <div className="flex items-center">
           <RiHome2Fill className="mr-1.5" />

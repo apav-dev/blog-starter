@@ -7,7 +7,6 @@ export interface SocialLinksProps {
   twitter?: string;
   github?: string;
   dev_to?: string;
-  // TODO: Add more social links
 }
 
 const SocialLinks = ({

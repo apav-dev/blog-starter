@@ -18,7 +18,6 @@ export const getPath: GetPath<TemplateProps> = () => {
   return `index.html`;
 };
 
-// TODO: mention this to Andrew
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (
   data
 ): HeadConfig => {
@@ -37,12 +36,7 @@ const Home: Template<TemplateRenderProps> = ({ document }) => {
     <>
       <HomeLayout
         GreetingContent={() => (
-          <Greeting
-            name="Aaron"
-            role="Developer Evangelist @ Yext"
-            // TODO: local url doesn't show up in deploy
-            headshot="src/assets/images/headshot.jpeg"
-          />
+          <Greeting name="Aaron" role="Developer Evangelist @ Yext" />
         )}
         InfoContent={() => (
           <div className="centered-container">
@@ -52,13 +46,20 @@ const Home: Template<TemplateRenderProps> = ({ document }) => {
               dev_to={site.c_devTo}
             />
             <InfoSection title="Introduction">
-              <p className="text-lg">{site.c_introduction}</p>
+              <p className=" text-lg">
+                My name is Aaron and I&apos;m a developer evangelist at Yext.
+                This is my first Developer Relations role and I&apos;m really
+                enjoying it! We have a lot of cool, new tools for people looking
+                to build websites and I&apos;m excited to demonstrate how to use
+                them. Before I started working at Yext, I worked as a software
+                engineer at a bank and a healthcare company.
+              </p>
             </InfoSection>
             <InfoSection title="Bio">
               <BioSection
-                home={site.c_home}
-                skills={site.c_skills}
-                interests={site.c_interests}
+                home="New York, NY"
+                skills={["Yext", "React", "Typescript", "Deno"]}
+                interests={["Skiing", "Podcasts", "TV", "Music"]}
               />
             </InfoSection>
           </div>
