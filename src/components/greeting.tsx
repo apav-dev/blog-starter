@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Image, ImageType } from "@yext/pages/components";
+import headshotUrl from "../assets/images/headshot.jpeg";
 
 interface GreetingProps {
   name: string;
@@ -25,10 +26,7 @@ const Greeting = ({ name, role, headshot }: GreetingProps): JSX.Element => {
             width={80}
           />
         ) : (
-          <img
-            className="w-20 rounded-full"
-            src={"src/assets/images/headshot.jpeg"}
-          />
+          <img className="w-20 rounded-full" src={headshotUrl} />
         )}
       </div>
     </div>

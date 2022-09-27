@@ -6,18 +6,24 @@ import ReactIcon from "../icons/ReactIcon";
 
 interface FooterProps {
   footerContainerStyle?: string;
+  firstName?: string;
+  lastName?: string;
 }
 
-const Footer = ({ footerContainerStyle }: FooterProps) => {
+const Footer = ({ footerContainerStyle, firstName, lastName }: FooterProps) => {
   return (
     <footer
       className={twMerge(
-        "mx-auto px-5 md:px-14 py-4 w-full",
+        "mx-auto w-full px-5 py-4 md:px-14",
         footerContainerStyle
       )}
     >
       <Divider />
-      <p className="text-xl font-bold">&copy; Aaron Pavlick</p>
+      {firstName && (
+        <p className="text-xl font-bold">
+          &copy; {firstName} {lastName ?? ""}
+        </p>
+      )}
       <div className="inline-flex items-center">
         <span className="mr-2">Built with</span>
         <ReactIcon />
