@@ -1,11 +1,12 @@
 {
   "$id": "site-entity",
   "filter": {
-    "entityIds": ["3374675287582839068"]
+    "entityIds": ["site"]
   },
   "source": "knowledgeGraph",
   "fields": [
-    "name",
+    "firstName",
+    "lastName",
     "c_role",
     "c_headshot",
     "c_twitter",

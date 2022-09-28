@@ -28,38 +28,37 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (
   };
 };
 
-const Home: Template<TemplateRenderProps> = ({ document }) => {
+const Home: Template<TemplateRenderProps> = ({
+  document,
+}: TemplateRenderProps) => {
   const { _site } = document;
-  const site: Site = _site;
-
   return (
     <>
       <HomeLayout
+        firstName={_site.firstName}
+        lastName={_site.lastName}
         GreetingContent={() => (
-          <Greeting name="Aaron" role="Developer Evangelist @ Yext" />
+          <Greeting
+            name={_site.firstName}
+            role={_site.c_role}
+            headshot={_site.c_headshot}
+          />
         )}
         InfoContent={() => (
           <div className="centered-container">
             <SocialLinks
-              twitter={site.c_twitter}
-              github={site.c_github}
-              dev_to={site.c_devTo}
+              twitter={_site.c_twitter}
+              github={_site.c_github}
+              dev_to={_site.c_devTo}
             />
             <InfoSection title="Introduction">
-              <p className=" text-lg">
-                My name is Aaron and I&apos;m a developer evangelist at Yext.
-                This is my first Developer Relations role and I&apos;m really
-                enjoying it! We have a lot of cool, new tools for people looking
-                to build websites and I&apos;m excited to demonstrate how to use
-                them. Before I started working at Yext, I worked as a software
-                engineer at a bank and a healthcare company.
-              </p>
+              <p className="text-lg">{_site.c_introduction}</p>
             </InfoSection>
             <InfoSection title="Bio">
               <BioSection
-                home="New York, NY"
-                skills={["Yext", "React", "Typescript", "Deno"]}
-                interests={["Skiing", "Podcasts", "TV", "Music"]}
+                home={_site.c_home}
+                skills={_site.c_skills}
+                interests={_site.c_interests}
               />
             </InfoSection>
           </div>
