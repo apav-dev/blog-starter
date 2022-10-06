@@ -38,11 +38,6 @@ const BlogPost: Template<TemplateRenderProps> = ({
   const coverPhoto = document.c_coverPhoto as ImageType | undefined;
   const headshot = _site.c_headshot as ImageType | undefined;
 
-  // use effect hook that will run on mount and log the document
-  React.useEffect(() => {
-    console.log(coverPhoto);
-  }, []);
-
   return (
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
