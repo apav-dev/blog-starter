@@ -49,7 +49,7 @@ const BlogPost: Template<TemplateRenderProps> = ({
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
         <InfoSection titleCssStyles="text-5xl pb-4" title={document.name}>
-          <Image image={document.c_coverPhoto} />
+          {document.c_coverPhoto && <Image image={document.c_coverPhoto} />}
           <p className="font-semibold">{formatDate(document.datePosted)}</p>
           <div className="font-display">{renderBlogContent(document.body)}</div>
         </InfoSection>
