@@ -26,7 +26,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (
   };
 };
 
-const Home: Template<TemplateRenderProps> = () => {
+const Home: Template<TemplateRenderProps> = ({
+  document,
+}: TemplateRenderProps) => {
+  const { _site } = document;
+
   return (
     <HomeLayout
       GreetingContent={() => (
@@ -37,18 +41,13 @@ const Home: Template<TemplateRenderProps> = () => {
           title: "Home",
           Section: (
             <PersonalInfo
-              twitter="https://twitter.com/apav_dev"
-              github="https://github.com/apav-dev"
-              devTo="https://dev.to/apavlick"
-              introduction="My name is Aaron and I'm a developer evangelist at Yext.
-                This is my first Developer Relations role and I'm really
-                enjoying it! We have a lot of cool, new tools for people looking
-                to build websites and I'm excited to demonstrate how to use
-                them. Before I started working at Yext, I worked as a software
-                engineer at a bank and a healthcare company."
-              home="New York, NY"
-              skills={["Yext", "React", "Typescript", "Deno"]}
-              interests={["Skiing", "Podcasts", "TV", "Music"]}
+              twitter={_site.c_twitter}
+              github={_site.c_github}
+              devTo={_site.devTo}
+              introduction={_site.c_introduction}
+              home={_site.c_home}
+              skills={_site.c_skills}
+              interests={_site.c_interests}
             />
           ),
         },
