@@ -11,6 +11,8 @@ import {
 import HomeLayout from "../components/layouts/home-layout";
 import Greeting from "../components/greeting";
 import PersonalInfo from "../components/personal-info";
+import SearchExperience from "../components/search-experience";
+import BlogResults from "../components/blog-results";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `index.html`;
@@ -32,31 +34,33 @@ const Home: Template<TemplateRenderProps> = ({
   const { _site } = document;
 
   return (
-    <HomeLayout
-      GreetingContent={() => (
-        <Greeting name="Aaron" role="Developer Evangelist @ Yext" />
-      )}
-      sections={[
-        {
-          title: "Home",
-          Section: (
-            <PersonalInfo
-              twitter={_site.c_twitter}
-              github={_site.c_github}
-              devTo={_site.devTo}
-              introduction={_site.c_introduction}
-              home={_site.c_home}
-              skills={_site.c_skills}
-              interests={_site.c_interests}
-            />
-          ),
-        },
-        {
-          title: "Blogs",
-          Section: <></>,
-        },
-      ]}
-    />
+    <SearchExperience experienceKey="blog-search" verticalKey="blogs">
+      <HomeLayout
+        GreetingContent={() => (
+          <Greeting name="Aaron" role="Developer Evangelist @ Yext" />
+        )}
+        sections={[
+          {
+            title: "Home",
+            Section: (
+              <PersonalInfo
+                twitter={_site.c_twitter}
+                github={_site.c_github}
+                devTo={_site.devTo}
+                introduction={_site.c_introduction}
+                home={_site.c_home}
+                skills={_site.c_skills}
+                interests={_site.c_interests}
+              />
+            ),
+          },
+          {
+            title: "Blogs",
+            Section: <BlogResults />,
+          },
+        ]}
+      />
+    </SearchExperience>
   );
 };
 
