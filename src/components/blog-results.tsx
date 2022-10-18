@@ -1,19 +1,21 @@
-import {
-  SearchBar,
-  StandardCard,
-  VerticalResults,
-} from "@yext/search-ui-react";
-import { useSearchActions, useSearchState } from "@yext/search-headless-react";
-import { ImSpinner3 } from "react-icons/im";
+import { SearchBar, VerticalResults } from "@yext/search-ui-react";
+import { useSearchActions } from "@yext/search-headless-react";
 import * as React from "react";
+import BlogCard from "./blog-card";
 
-const BlogSearchSection = () => {
+const BlogResults = () => {
+  const searchActions = useSearchActions();
+
+  React.useEffect(() => {
+    searchActions.executeVerticalQuery();
+  }, []);
+
   return (
     <div className="centered-container pt-4">
       <SearchBar />
-      <VerticalResults CardComponent={StandardCard} />
+      <VerticalResults CardComponent={BlogCard} />
     </div>
   );
 };
 
-export default BlogSearchSection;
+export default BlogResults;
