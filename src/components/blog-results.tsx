@@ -7,7 +7,7 @@ import { useSearchActions, useSearchState } from "@yext/search-headless-react";
 import { ImSpinner3 } from "react-icons/im";
 import * as React from "react";
 
-const BlogSearchSection = () => {
+const BlogResults = () => {
   return (
     <div className="centered-container pt-4">
       <SearchBar />
@@ -16,4 +16,4 @@ const BlogSearchSection = () => {
   );
 };
 
-export default BlogSearchSection;
+export default BlogResults;
