@@ -1,11 +1,11 @@
-const { ComponentsContentPath } = require("@yext/search-ui-react");
+// const { ComponentsContentPath } = require("@yext/search-ui-react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}",
     "./lib/**/*.{js,jsx}",
-    ComponentsContentPath,
+    // ComponentsContentPath,
   ],
   theme: {
     screens: {
