@@ -1,6 +1,6 @@
 # BLOG-STARTER
 
-This repository provides a basic example of how to start developing a React site on the Yext Sites system.
+This repository provides a basic example of how to start developing a React blog site on the Yext Pages system.
 
 ## Getting Started
 
@@ -12,40 +12,39 @@ This repository provides a basic example of how to start developing a React site
 
    - It's recommend to use nvm: https://github.com/nvm-sh/nvm#installing-and-updating or via brew `brew install nvm`
 
-1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext pages generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
+1. Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext pages generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
 
 ### Clone this repo and install dependencies
 
 ```shell
-git clone https://github.com/yext/pages-starter-react-locations
-cd pages-starter-react-locations
+git clone https://github.com/YextSolutions/pages-starter-react-blog.git
+cd pages-starter-react-blog
 npm install
+npm run dev
 ```
 
 ### Useful commands
 
+#### Primary Commands for Development
+
 `yext init` - Authenticates the Yext CLI with your Yext account
 
-`npm run dev` - runs your code against a local dev server using Vite
+`npm run dev` - runs your code against a local dev server using Vite and pulls down data from your Yext Knowledge Graph
+
+`npm run build:serve` - runs a production build of your site which mirrors the production environment. Running this command is recommended before committing your code and initiating a new deploy.
+
+#### Other CLI Commands
 
 - All stream documents come from the `localData` folder
 - You can visit either of these urls out of the box
   - http://localhost:3000/index/123
   - http://localhost:3000/static
 
-`npm run dev -- dynamic` - same as above except instead of using files from `localData` it will pull the document from Yext on the fly
-
 `yext pages generate-test-data` - pull an example set of `localData` from your account
 
 `yext pages build` - Runs a production build against your `localData`
 
 `yext pages serve` - Runs a local server against your production-built files
-
-- It's recommended to `yext pages build` followed by `yext pages serve` before committing in order to test that a real production build won't have any issues. In practice, development builds (via `npm run dev`) and production builds compile and bundle assets differently. For local development, ES Modules are loaded directly by the browser, allowing fast iteration during local development and also allows for hot module replacement (HMR). Other things like CSS are also loaded directly by the browser, including linking to sourcemaps. During a production build all of the different files are compiled (via ESBuild for jsx/tsx) and minified, creating assets as small as possible so that the final html files load quickly when served to a user.
-
-`npm run fmt` - Automatically formats all code
-
-`npm run lint` - Run ESLint to check for errors and warnings
 
 ## Repository Layout
 
@@ -62,8 +61,6 @@ root
 │   └───templates
 │       │   blog-post.tsx
 │       │   home.tsx
-│   │
-│   └───types
 ```
 
 ### localData
@@ -113,9 +110,3 @@ The rest of the files are basic config setup common to many other React projects
 1. ESLint - catches errors in your code
 1. Prettier - formats your code (you can add .prettierrc to override any default settings)
 1. TypeScript - adds typing to Javascript for a better developer experience
-
-## Temporary Changes / Additional Notes
-
-### .npmrc
-
-This file is necessary while this repository is private. You will need to add an environment variable called `NPM_TOKEN` in your branch settings in the Yext Sites UI. You can create the token via the https://npmjs.org 'Access Tokens' section. You will also need to export `NPM_TOKEN` in ~/.bash_profile locally as well (`npm login` doesn't seem to work when this file exists in the repo).
